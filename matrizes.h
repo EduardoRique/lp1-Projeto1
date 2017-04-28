@@ -16,19 +16,21 @@
 using namespace std;
 
 /**
-*@brief Funcao que realiza a multiplicacao de matrizes de forma iterativa
-*@param 
-*@param 
-*@return matriz resultante
+* @brief Funcao que multiplica duas matrizes quadradas de dimensao n x n de forma iterativa
+* @param A Matriz de entrada
+* @param B Matriz de entrada
+* @param n Dimensao das matrizes de entrada
+* @return Matriz produto resultante da multiplicacao
 */
-int iterativa(matrizA, matrizB, a1, a2, b1, b2);
+T** multiplicaI(T** A, T** B, int n);
 
 /**
-*@brief Funcao que realiza a multiplicacao de matrizes de forma recursiva
-*@param 
-*@param 
-*@return matriz resultante
+* @brief Funcao que multiplica duas matrizes quadradas de dimensao n x n de forma recursiva
+* @param A Matriz de entrada
+* @param B Matriz de entrada
+* @param n Dimensao das matrizes de entrada
+* @return Matriz produto resultante da multiplicacao
 */
-int recursiva();
+T** multiplicaR(T** A, T** B, int n);
 
 #endif
