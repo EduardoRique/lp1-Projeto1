@@ -21,7 +21,7 @@ using namespace std;
 *@param 
 *@return matriz resultante
 */
-int iterativa();
+int iterativa(matrizA, matrizB, a1, a2, b1, b2);
 
 /**
 *@brief Funcao que realiza a multiplicacao de matrizes de forma recursiva
