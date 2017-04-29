@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "matrizes.h"
 
 using namespace std;
 
@@ -100,6 +101,15 @@ int main(int argc, char* argv[]){
         }
     }
 
+
+    int **Mres = new int*[d1]; /**<Alocando a matriz resultante dinamicamente*/
+    for(int i = 0;i < d1; i++){
+        Mres[i] = new int[d1];
+    }
+    //multiplicaI(matriz1, matriz2, Mres, d1);
+    multiplicaR(matriz1, matriz2, Mres, d1);
+    print(Mres, d1);
+
     for(int i = 0;i < d1; ++i){
         delete[] matriz1[i];
     }
@@ -109,5 +119,10 @@ int main(int argc, char* argv[]){
         delete[] matriz2[i];
     }
     delete[] matriz2;  
+
+    for(int i = 0;i < d1; ++i){
+        delete[] Mres[i];
+    }
+    delete[] Mres;  
     return 0;
 }

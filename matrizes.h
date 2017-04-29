@@ -16,13 +16,20 @@
 using namespace std;
 
 /**
+* @brief Funcao que imprime a matriz resultante
+* @param Mres Matriz resultante
+* @param n Dimensao das matrizes de entrada
+*/
+void print(int** Mres, int n);
+
+/**
 * @brief Funcao que multiplica duas matrizes quadradas de dimensao n x n de forma iterativa
 * @param A Matriz de entrada
 * @param B Matriz de entrada
 * @param n Dimensao das matrizes de entrada
 * @return Matriz produto resultante da multiplicacao
 */
-T** multiplicaI(T** A, T** B, int n);
+void multiplicaI(int** A, int** B, int** C, int n);
 
 /**
 * @brief Funcao que multiplica duas matrizes quadradas de dimensao n x n de forma recursiva
@@ -31,6 +38,6 @@ T** multiplicaI(T** A, T** B, int n);
 * @param n Dimensao das matrizes de entrada
 * @return Matriz produto resultante da multiplicacao
 */
-T** multiplicaR(T** A, T** B, int n);
+void multiplicaR(int** A, int** B, int** C, int n);
 
 #endif
