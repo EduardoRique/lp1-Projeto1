@@ -11,12 +11,6 @@
 #include "matrizes.h"
 
 
-DesalocandoMatrizes(int n){
-
-
-
-}
-
 /**
 * @brief Funcao que imprime a matriz resultante
 * @param Mres Matriz resultante
@@ -59,194 +53,26 @@ void multiplicaI(int** A, int** B, int** C, int n){
 * @return Matriz produto resultante da multiplicacao
 */
 void multiplicaR(int** A, int** B, int** C, int n){
-
-    if(n == 1){
-        C[0][0] = A[0][0] * B[0][0];
-    }
-    else{
-        ///////////////////////////////////////////////////////////////////////
-        int **A1 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        A1[i] = new int[n/2];
-    }
-    int **A2 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        A2[i] = new int[n/2];
-    }
-    int **A3 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        A3[i] = new int[n/2];
-    }
-    int **A4 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        A4[i] = new int[n/2];
-    }    
-
-
-    int **B1 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        B1[i] = new int[n/2];
-    }
-    int **B2 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        B2[i] = new int[n/2];
-    }
-    int **B3 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        B3[i] = new int[n/2];
-    }
-    int **B4 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        B4[i] = new int[n/2];
-    }    
-
-    int **C1 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        C1[i] = new int[n/2];
-    }
-    int **C2 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        C2[i] = new int[n/2];
-    }
-    int **C3 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        C3[i] = new int[n/2];
-    }
-    int **C4 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        C4[i] = new int[n/2];
-    }    
-
-    int **P1 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P1[i] = new int[n/2];
-    }
-    int **P2 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P2[i] = new int[n/2];
-    }
-    int **P3 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P3[i] = new int[n/2];
-    }
-    int **P4 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P4[i] = new int[n/2];
-    }    
-    int **P5 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P5[i] = new int[n/2];
-    }
-    int **P6 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P6[i] = new int[n/2];
-    }
-    int **P7 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P7[i] = new int[n/2];
-    }
-    int **P8 = new int*[n/2]; /**<Alocando a matriz dinamicamente*/
-    for(int i = 0;i < n/2; i++){
-        P8[i] = new int[n/2];
-    }    
-    //////////////////////////////////////////////////////////////////////
     
-    for(int ii=0; ii<n/2; ii++){
-        for(int jj=0; jj<n/2; jj++){
-            A[ii][jj]
+    static int i = 0, j = 0, k = 0;
+
+    if(i >= n){
+        return;
+    }
+    else if(i < n){
+        if(j < n){
+            if(k < n){
+                C[i][j] += A[i][k] * B[k][j];
+                k++;
+                multiplicaR(A, B, C, n);
+            }
+            k = 0;
+            j++;
+            multiplicaR(A, B, C, n);
         }
+        j = 0;
+        i++;
+        multiplicaR(A, B, C, n);
     }
-    
-    
-    
-    ///////////////////////////////////////////////////////////////////////
-    for(int i = 0;i < n/2; ++i){
-        delete[] A1[i];
-    }
-    delete[] A1;
-    for(int i = 0;i < n/2; ++i){
-        delete[] A2[i];
-    }
-    delete[] A2;
-    for(int i = 0;i < n/2; ++i){
-        delete[] A3[i];
-    }
-    delete[] A3;
-    for(int i = 0;i < n/2; ++i){
-        delete[] A4[i];
-    }
-    delete[] A4;
-
-    for(int i = 0;i < n/2; ++i){
-        delete[] B1[i];
-    }
-    delete[] B1;
-    for(int i = 0;i < n/2; ++i){
-        delete[] B2[i];
-    }
-    delete[] B2;
-    for(int i = 0;i < n/2; ++i){
-        delete[] B3[i];
-    }
-    delete[] B3;
-    for(int i = 0;i < n/2; ++i){
-        delete[] B4[i];
-    }
-    delete[] B4;
-
-    for(int i = 0;i < n/2; ++i){
-        delete[] C1[i];
-    }
-    delete[] C1;
-    for(int i = 0;i < n/2; ++i){
-        delete[] C2[i];
-    }
-    delete[] C2;
-    for(int i = 0;i < n/2; ++i){
-        delete[] C3[i];
-    }
-    delete[] C3;
-    for(int i = 0;i < n/2; ++i){
-        delete[] C4[i];
-    }
-    delete[] C4;
-
-    for(int i = 0;i < n/2; ++i){
-        delete[] P1[i];
-    }
-    delete[] P1;
-    for(int i = 0;i < n/2; ++i){
-        delete[] P2[i];
-    }
-    delete[] P2;
-    for(int i = 0;i < n/2; ++i){
-        delete[] P3[i];
-    }
-    delete[] P3;
-    for(int i = 0;i < n/2; ++i){
-        delete[] P4[i];
-    }
-    delete[] P4;
-    for(int i = 0;i < n/2; ++i){
-        delete[] P5[i];
-    }
-    delete[] P5;
-    for(int i = 0;i < n/2; ++i){
-        delete[] P6[i];
-    }
-    delete[] P6;
-    for(int i = 0;i < n/2; ++i){
-        delete[] P7[i];
-    }
-    delete[] P7;
-    for(int i = 0;i < n/2; ++i){
-        delete[] P8[i];
-    }
-    delete[] P8;
-    ///////////////////////////////////////////////////////////////////////////
-    
-    }
-
 }
-
 
