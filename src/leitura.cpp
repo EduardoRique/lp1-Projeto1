@@ -7,8 +7,8 @@
 *@date  01/05/2017
 */
 
-#include "leitura.h"
-#include "funcoes.h"
+#include "../include/leitura.h"
+#include "../include/funcoes.h"
 
 /**
 * @brief Funcao para leitura das matrizes contida nos arquivos
@@ -131,7 +131,27 @@ void leitura(string *nomeArquivosA, string *nomeArquivosB, int numMatrizes) {
 			tempoR[i] = std::chrono::duration <double, std::milli> (deltaTR).count();
 		}
 
+		melhorTempo(tempoI, melhorI, vetorEstatistica);
+		piorTempo(tempoI, piorI, vetorEstatistica);
+		tempoMedio(tempoI, medioI, vetorEstatistica);		
+		desvioPadrao(tempoI, desvioI, medioI, vetorEstatistica);
 
+		melhorTempo(tempoR, melhorR, vetorEstatistica);
+		piorTempo(tempoR, piorR, vetorEstatistica);
+		tempoMedio(tempoR, medioR, vetorEstatistica);		
+		desvioPadrao(tempoR, desvioR, medioR, vetorEstatistica);
 
-	}	
+		++vetorEstatistica;
+	}
+
+	delete [] melhorI;
+	delete [] medioI;
+	delete [] piorI;
+	delete [] desvioI;	
+
+	delete [] melhorR;
+	delete [] medioR;
+	delete [] piorR;
+	delete [] desvioR;
+	
 }
