@@ -30,8 +30,8 @@ int main(int argc, char* argv[]){
         ss << argv[i];
         ss >> argumento;        
 
-        nomeMatrizesA[i - 1] = "../lp1-projeto1/input/A" + argumento + "x" + argumento + ".txt";            
-        nomeMatrizesB[i - 1] = "../lp1-projeto1/input/B" + argumento + "x" + argumento + ".txt";                
+        nomeMatrizesA[i - 1] = "../lp1-Projeto1/input/A" + argumento + "x" + argumento + ".txt";                 
+        nomeMatrizesB[i - 1] = "../lp1-Projeto1/input/B" + argumento + "x" + argumento + ".txt";                
 
         ss.clear(); 
 
