@@ -32,7 +32,7 @@ bool print(T** Mres, int n) {
 	ss << n;
 	ss >> aux;
 
-	arquivo = "../lp1-Projeto1/input/C" + aux + "x" + aux + ".txt";
+	arquivo = "../matrizes/C" + aux + "x" + aux + ".txt";
 
 	ofstream outfile(arquivo);
 

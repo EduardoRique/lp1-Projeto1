@@ -30,7 +30,7 @@ TEST_DIR=test
 PROG=multimat
 
 # Opcoes de compilacao
-CFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)
+CFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR) 
 
 # Garante que os alvos desta lista nao sejam confundidos com arquivos de mesmo nome
 .PHONY: all clean distclean doxy init

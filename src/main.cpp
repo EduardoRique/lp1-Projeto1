@@ -30,13 +30,13 @@ int main(int argc, char* argv[]){
         ss << argv[i];
         ss >> argumento;        
 
-        nomeMatrizesA[i - 1] = "../lp1-Projeto1/input/A" + argumento + "x" + argumento + ".txt";                 
-        nomeMatrizesB[i - 1] = "../lp1-Projeto1/input/B" + argumento + "x" + argumento + ".txt";                
+        nomeMatrizesA[i - 1] = "A" + argumento + "x" + argumento + ".txt";                 
+        nomeMatrizesB[i - 1] = "B" + argumento + "x" + argumento + ".txt";                
 
         ss.clear(); 
 
-        ifstream entradaA(nomeMatrizesA[i - 1]);
-        ifstream entradaB(nomeMatrizesB[i - 1]);
+        ifstream entradaA("../matrizes/" + nomeMatrizesA[i - 1]);
+        ifstream entradaB("../matrizes/" + nomeMatrizesB[i - 1]);
     
         if (!entradaA) {
             cerr << "O arquivo da matriz A de dimensao " << argumento << "x" << argumento << " nao foi encontrado." << endl;
